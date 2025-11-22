@@ -1,0 +1,234 @@
+/* ========================================
+   RESET - Remove browser default styles
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Make ALL text heavier for better printing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   BASE - Overall page and container
+   ======================================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #2c3e50;
+  color: #000;
+  font-size: 11pt;
+  line-height: 1.4;
+  /* Heavier base weight for better printing */
+  font-weight: 500;
+}
+
+/* White paper container */
+.container {
+  width: 8.5in;
+  height: 11in;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ========================================
+   HEADER - Top section with name/contact
+   ======================================== */
+.header {
+  background: #cacaca;
+  padding: 6px 30px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.80em;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.header h2 {
+  font-size: 0.95em;
+  font-weight: 550;
+  margin-bottom: 2px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  font-size: 9pt;
+}
+
+.contact-info .separator { color: #444; }
+
+/* ========================================
+   CONTENT - Main resume sections
+   ======================================== */
+.content {
+  padding: 20px 30px;
+  font-size: 10pt;
+  line-height: 1.3;
+}
+
+.section { margin-bottom: 24px; }
+
+/* Section titles like "Education", "Experience" */
+.section-title {
+  font-size: 10pt;
+  font-weight: 650;
+  text-transform: uppercase;
+  border-bottom: 2px solid #000;
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   RESUME ITEMS - Job/education entries
+   ======================================== */
+.education-item,
+.experience-item,
+.project-item,
+.summary-item {
+  margin-bottom: 18px;
+  padding-left: 12px;
+  border-left: 2px solid #e0e0e0;
+  transition: border-color 0.2s;
+}
+
+.education-item:hover,
+.experience-item:hover,
+.project-item:hover,
+.summary-item:hover {
+  border-left-color: #000;
+}
+
+.education-item + .education-item { margin-top: 8px; }
+
+/* Layout for job title, company, and date */
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.item-header > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Job title or degree name */
+.item-title {
+  font-weight: 650;
+  font-size: 11pt;
+  margin-bottom: 2px;
+}
+
+/* Company or school name */
+.item-subtitle {
+  font-weight: 600;
+  font-size: 10pt;
+  margin-bottom: 2px;
+}
+
+/* Date range */
+.item-date {
+  font-size: 9pt;
+  white-space: nowrap;
+}
+
+/* Description paragraph */
+.item-description {
+  font-size: 10pt;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* Bullet point lists */
+.item-bullets {
+  margin: 4px 0 0 18px;
+  padding: 0;
+}
+
+.item-bullets li {
+  font-size: 9pt;
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+
+/* ========================================
+   EDUCATION - Coursework/honors details
+   ======================================== */
+.education-details { margin-top: 6px; }
+
+.detail-section {
+  margin-bottom: 4px;
+  font-size: 9pt;
+  line-height: 1.2;
+}
+
+/* ========================================
+   SKILLS - Grid layout with categories
+   ======================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.skill-category {
+  padding: 4px;
+  border-left: 2px solid #000;
+}
+
+.skill-category h4 {
+  font-size: 10pt;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.skill-list {
+  list-style: none;
+}
+
+.skill-list li {
+  font-size: 10pt;
+}
+
+/* ========================================
+   BUTTONS - Print/PDF button
+   ======================================== */
+.pdf-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.pdf-button:hover { background: #c0392b; }
+
+/* ========================================
+   PRINT - Special styles for printing
+   ======================================== */
+@media print {
+  .pdf-button { display: none; }
+  body { background: white; margin: 0; padding: 0; }
+  .container { box-shadow: none; width: 8.5in; height: 11in; }
+  .header { background: none !important; color: black !important; }
+  .content { padding: 20px 30px; }
+}
